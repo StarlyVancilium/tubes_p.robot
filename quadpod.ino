@@ -15,35 +15,6 @@ Servo tibia_fr;
 Servo tibia_rl;
 Servo tibia_rr;
 
-void majubelakangkiri() {
-  tibia_rl.write(35);
-  delay(500);
-  femur_rl.write(80);
-  delay(500);
-  coxa_rl.write(0);
-  delay(500);
-  tibia_rl.write(55);  
-  femur_rl.write(30);//turunin kaki
-  delay(500);
-  coxa_rl.write(90);
-  delay(500);
-  femur_rl.write(50);
-}
-
-void majubelakangkanan() {
-  tibia_rr.write(145);
-  delay(500);
-  femur_rr.write(100); //naikin kaki
-  delay(500);
-  coxa_rr.write(180);
-  delay(500);
-  tibia_rr.write(125);  
-  femur_rr.write(150); //turunin kaki
-  delay(500);
-  coxa_rr.write(90);
-  delay(500);
-  femur_rr.write(130);
-}
 
 void d1() {
   // coxa_fr.detach();
@@ -126,37 +97,6 @@ void set() {
   tibia_rr.write(90); //makin besar makin ke atas
 }
 
-void majudepankiri() {  
-  tibia_fl.write(145);
-  delay(500);
-  femur_fl.write(100); //naikin kaki
-  delay(500);
-  coxa_fl.write(90);
-  delay(500);
-  tibia_fl.write(125);  
-  femur_fl.write(150);//turunin kaki
-  delay(500);
-  coxa_fl.write(180);
-  delay(500);
-  femur_fl.write(130);
-  delay(500);
-}
-
-void majudepankanan() {
-  tibia_fr.write(35);
-  delay(500);
-  femur_fr.write(80); //naikin kaki
-  delay(500);
-  coxa_fr.write(90);
-  delay(500);
-  tibia_fr.write(55);  
-  femur_fr.write(30);//turunin kaki
-  delay(500);
-  coxa_fr.write(0);
-  delay(500);
-  femur_fr.write(50);
-}
-
 void d1_attach() {
   coxa_fr.attach(5);
   femur_fr.attach(11);
@@ -206,6 +146,67 @@ void majudepanbareng() {
   delay(500);
 }
 
+void majudepankiri() {  
+  tibia_fl.write(145);
+  delay(500);
+  femur_fl.write(100); //naikin kaki
+  delay(500);
+  coxa_fl.write(90);
+  delay(500);
+  tibia_fl.write(125);  
+  femur_fl.write(150);//turunin kaki
+  delay(500);
+  coxa_fl.write(180);
+  delay(500);
+  femur_fl.write(130);
+  delay(500);
+}
+
+void majudepankanan() {
+  tibia_fr.write(35);
+  delay(500);
+  femur_fr.write(80); //naikin kaki
+  delay(500);
+  coxa_fr.write(90);
+  delay(500);
+  tibia_fr.write(55);  
+  femur_fr.write(30);//turunin kaki
+  delay(500);
+  coxa_fr.write(0);
+  delay(500);
+  femur_fr.write(50);
+}
+
+void majubelakangkiri() {
+  tibia_rl.write(35);
+  delay(500);
+  femur_rl.write(80);
+  delay(500);
+  coxa_rl.write(0);
+  delay(500);
+  tibia_rl.write(55);  
+  femur_rl.write(30);//turunin kaki
+  delay(500);
+  coxa_rl.write(90);
+  delay(500);
+  femur_rl.write(50);
+}
+
+void majubelakangkanan() {
+  tibia_rr.write(145);
+  delay(500);
+  femur_rr.write(100); //naikin kaki
+  delay(500);
+  coxa_rr.write(180);
+  delay(500);
+  tibia_rr.write(125);  
+  femur_rr.write(150); //turunin kaki
+  delay(500);
+  coxa_rr.write(90);
+  delay(500);
+  femur_rr.write(130);
+}
+
 void berdiri() {
   tibia_fl.write(125);  
   tibia_rr.write(125);
@@ -233,20 +234,21 @@ void berdiri() {
 }
 
 
-void hut() {
-  coxa_fl.write(145);
-  coxa_fr.write(35);
-  coxa_rl.write(145);
+// void hut() {
+//   coxa_fl.write(145);
+//   coxa_fr.write(35);
+//   coxa_rl.write(145);
 
-//  femur_fl.write(175);
-//  femur_fr.write(15);
-//  femur_rl.write(90);
-//
-//  tibia_fl.write(155);
-//  tibia_fr.write(25);
-  tibia_rl.write(155);
-//  tibia_rr.write(90);
-}
+// //  femur_fl.write(175);
+// //  femur_fr.write(15);
+// //  femur_rl.write(90);
+// //
+// //  tibia_fl.write(155);
+
+// //  tibia_fr.write(25);
+//   tibia_rl.write(155);
+// //  tibia_rr.write(90);
+// }
 
 void d1d2maju() {
   // d2_attach();
@@ -288,8 +290,7 @@ void setup() {
   // femur_fl.write(180);
   // femur_fr.write(0);
   // femur_rl.write(180);
-  femur_rr.write(90);
-
+  // femur_rr.write(90);
 }
 
 void loop() {
@@ -305,5 +306,5 @@ void loop() {
 
   // majubelakangkanan();
 
-  // d1d2maju();
+  d1d2maju();
 }
