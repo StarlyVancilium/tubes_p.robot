@@ -297,24 +297,8 @@ void berdiri() {
   delay(500);
 }
 
-
-// void hut() {
-//   coxa_fl.write(145);
-//   coxa_fr.write(35);
-//   coxa_rl.write(145);
-
-// //  femur_fl.write(175);
-// //  femur_fr.write(15);
-// //  femur_rl.write(90);
-// //
-// //  tibia_fl.write(155);
-
-// //  tibia_fr.write(25);
-//   tibia_rl.write(155);
-// //  tibia_rr.write(90);
-// }
-
 void d1_d2_mundur() {
+  // d2_attach();
   d1_reverse();
   femur_rr.write(60); //naikin kaki
   delay(300);
@@ -369,7 +353,7 @@ void setup() {
   set();
 }
 
-void gerakan_maju() {
+void gerakan_maju_mundur() {
   for (int i = 0; i <5; i++) {
     d1_d2_maju();
   }
@@ -377,34 +361,14 @@ void gerakan_maju() {
   berdiri();
   delay(2000);
   set();
-  delay(1000);
-}
-
-void gerakan_mundur() {
+  delay(2000);
+  berdiri();
+  delay(2000);
   for (int i = 0; i <5; i++) {
     d1_d2_mundur();
   }
-  delay(1000);
-  berdiri();
-  delay(2000);
-  set();
-  delay(1000);
 }
 
 void loop() {
-  // angkattibia();
-  // set();
-  // set2();
-  // majudepankiri();
-  // majudepanbareng();
-  // majudepankanan();
-  // majubelakangkiri();
-  // coxa_fr.write(0);
-  // berdiri();
-
-  // majubelakangkanan();
-  // gerakan_maju();
-  // d1_reverse();
-  // d2_reverse();
-  gerakan_mundur();
+  gerakan_maju_mundur();
 }
