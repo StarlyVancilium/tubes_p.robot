@@ -17,45 +17,31 @@ Servo tibia_rr;
 
 
 void d1() {
-  // coxa_fr.detach();
-  // femur_fr.detach();
-  // tibia_fr.detach();
-  // coxa_rl.detach();
-  // femur_rl.detach();
-  // tibia_rl.detach();
-
   tibia_fl.write(145);
   tibia_rr.write(145);
   delay(300);
   femur_fl.write(100); //naikin kaki
   femur_rr.write(100); //naikin kaki
   delay(300);
-  coxa_fl.write(90);
-  coxa_rr.write(180);
+  coxa_fl.write(90); //geser kaki ke depan
+  coxa_rr.write(180); //geser kaki ke depan
   delay(300);
   tibia_fl.write(125);  
   tibia_rr.write(125);  
   delay(300);
   femur_fl.write(150);//turunin kaki
   femur_rr.write(150);//turunin kaki
-  // femur_fr.write(40); //naikin kaki d2
-  // femur_rl.write(40); //naikin kaki d2
+  femur_fr.write(90); //naikin kaki d2
+  femur_rl.write(90); //naikin kaki d2
   delay(300);
-  coxa_fl.write(180);
-  coxa_rr.write(90);
+  coxa_rr.write(90); //geser kaki ke belakang
+  coxa_fl.write(180); //geser kaki ke belakang
   delay(300);
   femur_fl.write(130);
   femur_rr.write(130);  
 }
 
 void d1_reverse() {
-  // coxa_fr.detach();
-  // femur_fr.detach();
-  // tibia_fr.detach();
-  // coxa_rl.detach();
-  // femur_rl.detach();
-  // tibia_rl.detach();
-
   tibia_rr.write(145);
   tibia_fl.write(145);
   delay(300);
@@ -73,21 +59,14 @@ void d1_reverse() {
   // femur_fr.write(40); //naikin kaki d2
   // femur_rl.write(40); //naikin kaki d2
   delay(300);
-  coxa_rr.write(180);
   coxa_fl.write(90);
+  coxa_rr.write(180);
   delay(300);
   femur_rr.write(130);  
   femur_fl.write(130);
 }
 
 void d2() {
-  // coxa_fl.detach();
-  // femur_fl.detach();
-  // tibia_fl.detach();
-  // coxa_rr.detach();
-  // femur_rr.detach();
-  // tibia_rr.detach();
-
   tibia_fr.write(35);
   tibia_rl.write(35);
   delay(300);
@@ -102,24 +81,17 @@ void d2() {
   delay(300);
   femur_fr.write(30); //turunin kaki
   femur_rl.write(30); //turunin kaki
-  // femur_fl.write(140); //naikin kaki d1
-  // femur_rr.write(140); //naikin kaki d1
+  femur_fl.write(90); //naikin kaki d1
+  femur_rr.write(90); //naikin kaki d1
   delay(300);
-  coxa_fr.write(0);
   coxa_rl.write(90);
+  coxa_fr.write(0);
   delay(300);
   femur_fr.write(50);
   femur_rl.write(50);
 }
 
 void d2_reverse() {
-  // coxa_fl.detach();
-  // femur_fl.detach();
-  // tibia_fl.detach();
-  // coxa_rr.detach();
-  // femur_rr.detach();
-  // tibia_rr.detach();
-
   tibia_rl.write(35);
   tibia_fr.write(35);
   delay(300);
@@ -137,8 +109,8 @@ void d2_reverse() {
   // femur_fl.write(140); //naikin kaki d1
   // femur_rr.write(140); //naikin kaki d1
   delay(300);
-  coxa_rl.write(0);
   coxa_fr.write(90);
+  coxa_rl.write(0);
   delay(300);
   femur_rl.write(50);
   femur_fr.write(50);
@@ -161,6 +133,13 @@ void set() {
   tibia_rr.write(90); //makin besar makin ke atas
 }
 
+void set_awal() {
+  set();
+  tibia_fl.write(180);
+  tibia_fr.write(0);
+  tibia_rl.write(0);
+  tibia_rr.write(180);
+}
 void d1_attach() {
   coxa_fr.attach(5);
   femur_fr.attach(11);
@@ -303,6 +282,7 @@ void d1_d2_mundur() {
   femur_rr.write(60); //naikin kaki
   delay(300);
   coxa_rr.write(90);
+  delay(300);
   femur_rr.write(150); //turunin kaki
   delay(300);
   // d1_attach();
@@ -310,6 +290,7 @@ void d1_d2_mundur() {
   femur_rl.write(120); //naikin kaki
   delay(300);
   coxa_rl.write(90);
+  delay(300);
   femur_rl.write(30); //turunin kaki
   delay(300);  
 }
@@ -320,6 +301,7 @@ void d1_d2_maju() {
   femur_fl.write(60); //naikin kaki
   delay(300);
   coxa_fl.write(90);
+  delay(300);
   femur_fl.write(150); //turunin kaki
   delay(300);
   // d1_attach();
@@ -327,6 +309,7 @@ void d1_d2_maju() {
   femur_fr.write(120); //naikin kaki
   delay(300);
   coxa_fr.write(90);
+  delay(300);
   femur_fr.write(30); //turunin kaki
   delay(300);
 }
@@ -350,14 +333,16 @@ void setup() {
   tibia_rl.attach(12);
   tibia_rr.attach(13);
   delay(500);
-  set();
+  set_awal();
+
 }
+
+bool selesai = false;
 
 void gerakan_maju_mundur() {
   for (int i = 0; i <5; i++) {
     d1_d2_maju();
   }
-  delay(1000);
   berdiri();
   delay(2000);
   set();
@@ -367,8 +352,18 @@ void gerakan_maju_mundur() {
   for (int i = 0; i <5; i++) {
     d1_d2_mundur();
   }
+  berdiri();
+  delay(2000);
+  set();
 }
 
 void loop() {
-  gerakan_maju_mundur();
+  // if (!selesai) {
+  //   // gerakan_maju_mundur();
+  //   // d1;
+  //   d1_d2_maju();
+  //   selesai = true;
+  // }
+    d1_d2_maju();
+  // gerakan_maju_mundur();
 }
