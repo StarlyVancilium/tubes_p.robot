@@ -48,19 +48,19 @@ void d1_reverse() {
   femur_rr.write(100); //naikin kaki
   femur_fl.write(100); //naikin kaki
   delay(300);
-  coxa_rr.write(90);
-  coxa_fl.write(180);
+  coxa_rr.write(90); //geser kaki ke belakang
+  coxa_fl.write(180); //geser kaki ke belakang
   delay(300);
   tibia_rr.write(125);  
   tibia_fl.write(125);  
   delay(300);
   femur_rr.write(150);//turunin kaki
   femur_fl.write(150);//turunin kaki
-  // femur_fr.write(40); //naikin kaki d2
-  // femur_rl.write(40); //naikin kaki d2
+  femur_fr.write(90); //naikin kaki d2
+  femur_rl.write(90); //naikin kaki d2
   delay(300);
-  coxa_fl.write(90);
-  coxa_rr.write(180);
+  coxa_fl.write(90); //geser kaki ke depan
+  coxa_rr.write(180); //geser kaki ke depan
   delay(300);
   femur_rr.write(130);  
   femur_fl.write(130);
@@ -73,8 +73,8 @@ void d2() {
   femur_fr.write(80); //naikin kaki
   femur_rl.write(80); //naikin kaki
   delay(300);
-  coxa_fr.write(90);
-  coxa_rl.write(0);
+  coxa_fr.write(90); //geser kaki ke depan
+  coxa_rl.write(0); //geser kaki ke depan
   delay(300);
   tibia_fr.write(55);  
   tibia_rl.write(55);  
@@ -84,8 +84,8 @@ void d2() {
   femur_fl.write(90); //naikin kaki d1
   femur_rr.write(90); //naikin kaki d1
   delay(300);
-  coxa_rl.write(90);
-  coxa_fr.write(0);
+  coxa_rl.write(90); //geser kaki ke belakang
+  coxa_fr.write(0); //geser kaki ke belakang
   delay(300);
   femur_fr.write(50);
   femur_rl.write(50);
@@ -98,19 +98,19 @@ void d2_reverse() {
   femur_rl.write(80); //naikin kaki
   femur_fr.write(80); //naikin kaki
   delay(300);
-  coxa_rl.write(90);
-  coxa_fr.write(0);
+  coxa_rl.write(90); //geser kaki ke belakang
+  coxa_fr.write(0); //geser kaki ke belakang
   delay(300);
   tibia_rl.write(55);  
   tibia_fr.write(55);  
   delay(300);
   femur_rl.write(30); //turunin kaki
   femur_fr.write(30); //turunin kaki
-  // femur_fl.write(140); //naikin kaki d1
-  // femur_rr.write(140); //naikin kaki d1
+  femur_fl.write(90); //naikin kaki d1
+  femur_rr.write(90); //naikin kaki d1
   delay(300);
-  coxa_fr.write(90);
-  coxa_rl.write(0);
+  coxa_fr.write(90); //geser kaki ke depan
+  coxa_rl.write(0); //geser kaki ke depan
   delay(300);
   femur_rl.write(50);
   femur_fr.write(50);
